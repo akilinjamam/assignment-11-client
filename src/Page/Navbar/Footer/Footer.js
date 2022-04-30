@@ -13,7 +13,7 @@ const Footer = () => {
     return (
         <div style={{ backgroundColor: 'rgb(44, 40, 40)', padding: '20px' }}>
 
-            <div style={{ display: 'flex', justifyContent: 'space-between', width: '90%', margin: 'auto' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', width: '90%', margin: 'auto' }}>
 
                 <div className='left'>
                     <h3 style={{ color: 'gray' }}>Our Brands</h3>
