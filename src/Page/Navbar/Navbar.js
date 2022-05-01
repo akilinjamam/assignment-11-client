@@ -4,7 +4,7 @@ import logo from '../../img-logo-favicon/car-for-assignment-11.png'
 
 const Navbarr = () => {
     return (
-        <div>
+        <div style={{ position: 'sticky', top: '0', zIndex: '10' }}>
             <Navbar style={{ backgroundColor: 'black' }} collapseOnSelect expand="lg" variant="dark">
                 <Container>
                     <Navbar.Brand href="#home"> <img style={{ width: '160px' }} src={logo} alt="" /> </Navbar.Brand>
