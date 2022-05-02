@@ -1,0 +1,50 @@
+.the-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+.photos img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.photos-frame {
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.photos-detailed {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin: auto;
+    padding-top: 90px;
+    color: white;
+    display: none;
+
+
+}
+
+.photos-detailed .backgrounds {
+    background-color: rgba(0, 0, 0, 0.404);
+    padding: 10px;
+}
+
+.photos-album {
+    width: 90%;
+    margin: auto;
+}
+
+
+.photos-frame:hover .photos-detailed {
+
+    display: block;
+    background-color: rgba(252, 201, 71, 0.37);
+}
+
+.photos-frame:hover .photos {
+    transform: scale(1.2);
+    transition: transform 1s ease-in-out;
+}
