@@ -10,6 +10,7 @@ import useProducts from '../../../useProducts';
 const Home = () => {
 
     const [products] = useProducts()
+    const productsSliced = products.slice(0, 3)
     return (
         <div>
             <h2>this is home</h2>
@@ -66,11 +67,11 @@ const Home = () => {
                     </Carousel.Item>
                 </Carousel>
             </div>
-
+            <br />
             <div>
 
                 {
-                    products.map(product => <Products key={product._id} product={product} ></Products>)
+                    productsSliced.map(product => <Products key={product._id} product={product} ></Products>)
                 }
 
             </div>

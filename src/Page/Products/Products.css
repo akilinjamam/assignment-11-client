@@ -1,0 +1,44 @@
+.photo img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.photo-frame {
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-detailed {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin: auto;
+    padding-top: 190px;
+    color: white;
+    display: none;
+
+
+}
+
+.photo-detailed .background {
+    background-color: rgba(0, 0, 0, 0.404);
+    padding: 10px;
+}
+
+.photo-album {
+    width: 60%;
+    margin: auto;
+}
+
+
+.photo-frame:hover .photo-detailed {
+
+    display: block;
+    background-color: rgba(252, 201, 71, 0.37);
+}
+
+.photo-frame:hover .photo {
+    transform: scale(1.2);
+    transition: transform 1s ease-in-out;
+}
