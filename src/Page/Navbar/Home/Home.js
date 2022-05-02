@@ -5,8 +5,11 @@ import v2 from '../../../banner/bmw.jpg'
 import v3 from '../../../banner/mazda.jpg'
 import v4 from '../../../banner/honda.jpg'
 import Products from '../../Products/Products';
+import useProducts from '../../../useProducts';
 
 const Home = () => {
+
+    const [products] = useProducts()
     return (
         <div>
             <h2>this is home</h2>
@@ -65,7 +68,11 @@ const Home = () => {
             </div>
 
             <div>
-                <Products></Products>
+
+                {
+                    products.map(product => <Products key={product._id} product={product} ></Products>)
+                }
+
             </div>
 
         </div>

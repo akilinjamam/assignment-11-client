@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Products = () => {
+const Products = ({ product }) => {
+    const { quantity } = product
     return (
         <div>
-            this is all products
+            this is all products {quantity}
         </div>
     );
 };
