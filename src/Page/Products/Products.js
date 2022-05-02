@@ -18,7 +18,7 @@ const Products = ({ product }) => {
                             <h3>{name}</h3>
                             <p title={description}>Description: {description.length > 20 ? description.slice(0, 20) + '...' : description}  </p>
                             <p>Quantity: {quantity} </p>
-                            <button className='btn btn-primary'> Manage Products </button>
+                            <button className='btn btn-primary'> Stock Update </button>
                         </div>
 
                     </div>

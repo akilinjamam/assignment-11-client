@@ -7,7 +7,7 @@ const Navbarr = () => {
         <div style={{ position: 'sticky', top: '0', zIndex: '10' }}>
             <Navbar style={{ backgroundColor: 'black' }} collapseOnSelect expand="lg" variant="dark">
                 <Container>
-                    <Navbar.Brand href="#home"> <img style={{ width: '160px' }} src={logo} alt="" /> </Navbar.Brand>
+                    <Navbar.Brand href="/home"> <img style={{ width: '160px' }} src={logo} alt="" /> </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">

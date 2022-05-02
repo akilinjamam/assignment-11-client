@@ -6,6 +6,7 @@ import v3 from '../../../banner/mazda.jpg'
 import v4 from '../../../banner/honda.jpg'
 import Products from '../../Products/Products';
 import useProducts from '../../../useProducts';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 
@@ -74,6 +75,10 @@ const Home = () => {
                     productsSliced.map(product => <Products key={product._id} product={product} ></Products>)
                 }
 
+            </div>
+
+            <div>
+                <Link to='/manageInventory'> <button className='btn btn-primary'> Manage Inventory </button> </Link>
             </div>
 
         </div>
