@@ -40,7 +40,12 @@ const ProductDetail = () => {
     }
 
     const handleAdd = (event) => {
+        event.preventDefault()
+        const add = event.target.quantity.value;
+        const parsedQuantity = parseInt(add);
+        console.log(parsedQuantity)
 
+        setNewQuantity(parseInt(product.quantity) + parsedQuantity)
 
     }
 
@@ -69,8 +74,12 @@ const ProductDetail = () => {
             </div>
             <br />
             <div>
-                <input type="text" name="number" id="" /> <br /> <br />
-                <button onClick={handleAdd} className='btn btn-primary'>Add Quantity</button>
+
+                <form onSubmit={handleAdd}>
+                    <input type="text" name="quantity" id="" /> <br /> <br />
+                    <input className='btn btn-primary' type="submit" value="Add Quantity " />
+                </form>
+
             </div>
         </div>
     );
