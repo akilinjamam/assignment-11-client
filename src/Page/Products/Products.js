@@ -1,8 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Products.css'
 
 const Products = ({ product }) => {
-    const { quantity, img, description, name } = product
+    const { quantity, img, description, name, _id } = product
+
+    const navigate = useNavigate()
+
+    const handleButton = (id) => {
+        navigate(`/products/${id}`)
+    }
     return (
         <div>
             <div className='photo-album'>
@@ -18,7 +25,7 @@ const Products = ({ product }) => {
                             <h3>{name}</h3>
                             <p title={description}>Description: {description.length > 20 ? description.slice(0, 20) + '...' : description}  </p>
                             <p>Quantity: {quantity} </p>
-                            <button className='btn btn-primary'> Stock Update </button>
+                            <button onClick={() => handleButton(_id)} className='btn btn-primary'> Stock Update </button>
                         </div>
 
                     </div>
