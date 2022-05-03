@@ -39,24 +39,38 @@ const ProductDetail = () => {
 
     }
 
+    const handleAdd = (event) => {
+
+
+    }
+
 
     return (
-        <div style={{ border: '1px solid gray', width: '76%' }} className=' mx-auto mt-3 p-2 rounded' >
-            <div>
-                <img className='w-100' src={img} alt="" />
-            </div>
-            <div className='text-start p-2'>
-                <h2 className='text-bold'> Brand : <span style={{ color: 'green' }}>{product.name}  </span>  </h2>
-
-                <p className='text-dark'>Description : {description} </p>
-                <div style={{ backgroundColor: 'lightgray', borderRadius: '10px', padding: '5px', display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
-                    <p className='text-dark mt-2 ms-2'>Quantity : {newQuantity ? newQuantity : quantity} </p>
-
-                    <button onClick={() => decreaseQuantity(product)} className='btn btn-primary'>Delivered</button>
-
+        <div>
+            <div style={{ border: '1px solid gray', width: '76%' }} className=' mx-auto mt-3 p-2 rounded' >
+                <div>
+                    <img className='w-100' src={img} alt="" />
                 </div>
-                <p className='text-dark'>Price : {price} </p>
-                <p className='text-dark'>Suppliyer Name : {supplier} </p>
+                <div className='text-start p-2'>
+                    <h2 className='text-bold'> Brand : <span style={{ color: 'green' }}>{product.name}  </span>  </h2>
+
+                    <p className='text-dark'>Description : {description} </p>
+                    <div style={{ backgroundColor: 'lightgray', borderRadius: '10px', padding: '5px', display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
+                        <p className='text-dark mt-2 ms-2'>Quantity : {newQuantity ? newQuantity : quantity} </p>
+
+                        <button onClick={() => decreaseQuantity(product)} className='btn btn-primary'>Delivered</button>
+
+                    </div>
+                    <p className='text-dark'>Price : {price} </p>
+                    <p className='text-dark'>Suppliyer Name : {supplier} </p>
+                </div>
+
+
+            </div>
+            <br />
+            <div>
+                <input type="text" name="number" id="" /> <br /> <br />
+                <button onClick={handleAdd} className='btn btn-primary'>Add Quantity</button>
             </div>
         </div>
     );
