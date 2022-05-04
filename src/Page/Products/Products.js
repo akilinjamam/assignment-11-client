@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Products.css'
+import deleteIcon from '../../icon/delete.png'
 
 const Products = ({ product }) => {
     const { quantity, img, description, name, _id } = product
@@ -22,11 +23,18 @@ const Products = ({ product }) => {
                     <div className='photo-detailed'>
 
                         <div className='background'>
+
                             <h3>{name}</h3>
+
                             <p title={description}>Description: {description.length > 20 ? description.slice(0, 20) + '...' : description}  </p>
                             <p>Quantity: {quantity} </p>
                             <button onClick={() => handleButton(_id)} className='btn btn-primary'> Stock Update </button>
+
+
+
                         </div>
+
+
 
                     </div>
                 </div>

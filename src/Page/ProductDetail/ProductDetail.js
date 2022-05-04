@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const ProductDetail = () => {
 
@@ -128,10 +128,14 @@ const ProductDetail = () => {
             <div>
 
                 <form onSubmit={handleAdd}>
-                    <input type="text" name="quantity" id="" /> <br /> <br />
-                    <input className='btn btn-primary' type="submit" value="Add Quantity " />
+                    <input type="number" name="quantity" id="" /> <br /> <br />
+                    <input className='btn btn-primary' type="submit" value="Restock the Items " />
                 </form>
 
+            </div>
+            <br />
+            <div>
+                <Link className='btn btn-primary' to='/manageInventory'>Manage Inventory</Link>
             </div>
         </div>
     );

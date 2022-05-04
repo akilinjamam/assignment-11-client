@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import useProducts from '../../useProducts';
 import Products from '../Products/Products';
 import './ManageInventory.css'
+import deleteIcon from '../../icon/delete.png'
 
 const ManageInventory = () => {
     const [inventories] = useProducts()
@@ -35,6 +36,12 @@ const ManageInventory = () => {
                                         <p title={inventory.description}>Description: {inventory.description.length > 20 ? inventory.description.slice(0, 20) + '...' : inventory.description}  </p>
                                         <p>Quantity: {inventory.quantity} </p>
                                         <button onClick={() => handleButton(inventory._id)} className='btn btn-primary'> Stock Update </button>
+
+                                        <div style={{ position: 'absolute', right: '0', display: 'inline', paddingBottom: '10px', paddingRight: '20px' }}>
+                                            <span style={{ position: 'relative' }}>
+                                                <button style={{ border: 'none', backgroundColor: 'rgba(252, 201, 71, 0)' }}> <img style={{ width: '40px', }} className='dlt the-dlt ' src={deleteIcon} alt="" /></button>
+                                            </span>
+                                        </div>
                                     </div>
 
                                 </div>
