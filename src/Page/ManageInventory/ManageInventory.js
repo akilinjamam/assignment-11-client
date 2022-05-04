@@ -6,13 +6,35 @@ import './ManageInventory.css'
 import deleteIcon from '../../icon/delete.png'
 
 const ManageInventory = () => {
-    const [inventories] = useProducts()
+    const [inventories, setInventories] = useProducts()
+
 
     const navigate = useNavigate()
 
     const handleButton = (id) => {
         navigate(`/products/${id}`)
     }
+
+    const deleteButton = (id) => {
+        const confirmDelete = window.confirm('Are you sure you want to delete Item')
+
+        if (confirmDelete) {
+            const url = `https://peaceful-headland-64387.herokuapp.com/products/${id}`
+
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    const remaining = inventories.filter(inventory => inventory._id !== id);
+                    setInventories(remaining)
+                })
+        }
+
+    }
+
+
     return (
         <div>
             <h2>Manage Inventory</h2>
@@ -37,9 +59,9 @@ const ManageInventory = () => {
                                         <p>Quantity: {inventory.quantity} </p>
                                         <button onClick={() => handleButton(inventory._id)} className='btn btn-primary'> Stock Update </button>
 
-                                        <div style={{ position: 'absolute', right: '0', display: 'inline', paddingBottom: '10px', paddingRight: '20px' }}>
+                                        <div style={{ position: 'absolute', right: '0', display: 'inline', paddingBottom: '10px', paddingRight: '10px' }}>
                                             <span style={{ position: 'relative' }}>
-                                                <button style={{ border: 'none', backgroundColor: 'rgba(252, 201, 71, 0)' }}> <img style={{ width: '40px', }} className='dlt the-dlt ' src={deleteIcon} alt="" /></button>
+                                                <button onClick={() => deleteButton(inventory._id)} style={{ border: 'none', backgroundColor: 'rgba(252, 201, 71, 0)' }}> <img style={{ width: '40px', }} className='dlt the-dlt ' src={deleteIcon} alt="" /></button>
                                             </span>
                                         </div>
                                     </div>
