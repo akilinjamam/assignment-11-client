@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useProducts from '../../useProducts';
 import Products from '../Products/Products';
 import './ManageInventory.css'
@@ -70,11 +70,14 @@ const ManageInventory = () => {
                             </div>
                         </div>
 
+
+
                     </div>)
                 }
             </div>
+            <br />
 
-
+            <Link className='btn btn-primary' to='/additems'> Add New Item </Link>
 
         </div>
     );

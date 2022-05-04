@@ -128,7 +128,7 @@ const ProductDetail = () => {
             <div>
 
                 <form onSubmit={handleAdd}>
-                    <input type="number" name="quantity" id="" /> <br /> <br />
+                    <input title='type number of quantity' type="number" name="quantity" id="" /> <br /> <br />
                     <input className='btn btn-primary' type="submit" value="Restock the Items " />
                 </form>
 
