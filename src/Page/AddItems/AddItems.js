@@ -40,6 +40,7 @@ const AddItems = () => {
 
 
                 <input className='mb-2' placeholder='put photo url' type="text" {...register("img")} />
+                <input className='mb-2' placeholder='put supplier name' type="text" {...register("supplier")} />
                 <input className='mb-2 btn btn-primary' type="submit" value="Add Products" />
             </form>
             <ToastContainer></ToastContainer>

@@ -9,7 +9,8 @@ const ProductDetail = () => {
     const { productDetailId } = useParams()
     const [product, setProduct] = useState({})
     const { img, name, description, price, quantity, supplier } = product
-    console.log(quantity)
+    console.log(typeof (quantity))
+    console.log(product);
 
     useEffect(() => {
         const url = `https://peaceful-headland-64387.herokuapp.com/products/${productDetailId}`
@@ -22,15 +23,38 @@ const ProductDetail = () => {
     console.log(typeof (parsedQuantity))
 
     let [newQuantity, setNewQuantity] = useState();
-
     console.log(newQuantity)
+
+
+
 
     const decreaseQuantity = (product) => {
 
         console.log(parseInt(product.quantity), 'clicked')
         if (product.quantity != 0) {
             let addCount = parseInt(product.quantity) - 1
-            setNewQuantity(product.quantity = addCount)
+            const countStringed = addCount.toString()
+            setNewQuantity(product.quantity = countStringed)
+
+
+            // update server
+
+            const url = `https://peaceful-headland-64387.herokuapp.com/products/${productDetailId}`
+            // const stringifiedQuantity = newQuantity.toString()
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(product)
+            })
+
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data, 'success');
+                    alert('successfully updated');
+
+                })
 
         } else {
             alert('can not less then 0')
@@ -42,12 +66,18 @@ const ProductDetail = () => {
     const handleAdd = (event) => {
         event.preventDefault()
         const add = event.target.quantity.value;
+
         const parsedQuantity = parseInt(add);
+        const updatedQuantity = parseInt(product.quantity) + parsedQuantity
+        const count = updatedQuantity
         console.log(parsedQuantity)
 
-        setNewQuantity(parseInt(product.quantity) + parsedQuantity)
+        setProduct(count)
 
-    }
+
+    };
+
+
 
 
     return (
