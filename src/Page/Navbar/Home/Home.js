@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 const Home = () => {
 
     const [products] = useProducts()
-    const productsSliced = products.slice(0, 3)
+    const productsSliced = products.slice(0, 6)
     return (
         <div>
             <h2>this is home</h2>

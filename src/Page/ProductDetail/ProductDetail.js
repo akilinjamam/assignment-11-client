@@ -65,16 +65,38 @@ const ProductDetail = () => {
 
     const handleAdd = (event) => {
         event.preventDefault()
-        const add = event.target.quantity.value;
+        const add = parseInt(event.target.quantity.value);
+        console.log(typeof (add), add)
+        const parsedQuantity = parseInt(quantity)
+        console.log(typeof (parsedQuantity), parsedQuantity)
 
-        const parsedQuantity = parseInt(add);
-        const updatedQuantity = parseInt(product.quantity) + parsedQuantity
-        const count = updatedQuantity
-        console.log(parsedQuantity)
+        const total = add + parsedQuantity
+        console.log(typeof (total), total)
 
-        setProduct(count)
+        const stringTotal = total.toString()
+        console.log(typeof (stringTotal), stringTotal)
+
+        setNewQuantity(product.quantity = stringTotal)
 
 
+        // update server
+
+        const url = `https://peaceful-headland-64387.herokuapp.com/products/${productDetailId}`
+        // const stringifiedQuantity = newQuantity.toString()
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(product)
+        })
+
+            .then(res => res.json())
+            .then(data => {
+                console.log(data, 'success');
+                alert('successfully updated');
+
+            })
     };
 
 
