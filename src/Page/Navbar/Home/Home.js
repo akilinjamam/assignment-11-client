@@ -13,6 +13,10 @@ const Home = () => {
 
     const [products] = useProducts()
     const productsSliced = products.slice(0, 6)
+
+    // if (!products) {
+    //     return <Spin></Spin>
+    // }
     return (
         <div>
 
@@ -72,16 +76,12 @@ const Home = () => {
             <br />
             <div>
 
+
                 {
-                    productsSliced.map(product => <Products key={product._id} product={product} ></Products>)
+                    !products ? <div><Spin></Spin></div> : productsSliced.map(product => <Products key={product._id} product={product} ></Products>)
 
                 }
 
-                {
-                    !productsSliced && <div >
-                        <Spin></Spin>
-                    </div>
-                }
 
             </div>
 

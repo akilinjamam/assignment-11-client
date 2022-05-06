@@ -2,6 +2,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import AddItems from './Page/AddItems/AddItems';
+import Blogs from './Page/Blogs/Blogs';
 import Login from './Page/Login/Login';
 import ManageInventory from './Page/ManageInventory/ManageInventory';
 import MyItem from './Page/MyItem/MyItem';
@@ -30,6 +31,7 @@ function App() {
           </RequireAuths>}>
         </Route>
         <Route path='/products/:productDetailId' element={<ProductDetail></ProductDetail>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/Myitem' element={<MyItem></MyItem>}></Route>

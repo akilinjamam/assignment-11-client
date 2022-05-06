@@ -23,7 +23,7 @@ const Navbarr = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#features">Features</Nav.Link>
+                            <Nav.Link as={Link} to="/blogs" >Blogs</Nav.Link>
                             <Nav.Link href="#pricing">Pricing</Nav.Link>
 
                         </Nav>
