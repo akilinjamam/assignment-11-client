@@ -13,7 +13,7 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
-
+    let elementError;
 
     const navigate = useNavigate()
 
@@ -43,10 +43,10 @@ const Login = () => {
     }
 
 
-    let elementError;
+
     if (error) {
         elementError = <div>
-            <p> Error: {error?.message}  </p>
+            <p className='text-danger'> Error: {error?.message}  </p>
         </div>
     }
 
@@ -70,7 +70,7 @@ const Login = () => {
 
                     {/* showing error */}
                     <div>
-                        <p style={{ fontSize: '12px', textAlign: 'center', color: 'red' }} > {elementError} </p>
+                        <p  > {elementError} </p>
 
                     </div>
 
