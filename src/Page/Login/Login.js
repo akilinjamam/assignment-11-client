@@ -3,6 +3,7 @@ import { Button } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import SocialSide from '../SocialSide/SocialSide';
 import Spin from '../Spinner/Spinner';
 
 const Login = () => {
@@ -72,6 +73,10 @@ const Login = () => {
                     <div>
                         <p  > {elementError} </p>
 
+                    </div>
+
+                    <div>
+                        <SocialSide></SocialSide>
                     </div>
 
 

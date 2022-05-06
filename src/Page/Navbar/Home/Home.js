@@ -7,6 +7,7 @@ import v4 from '../../../banner/honda.jpg'
 import Products from '../../Products/Products';
 import useProducts from '../../../useProducts';
 import { Link } from 'react-router-dom';
+import Spin from '../../Spinner/Spinner';
 
 const Home = () => {
 
@@ -73,7 +74,12 @@ const Home = () => {
 
                 {
                     productsSliced.map(product => <Products key={product._id} product={product} ></Products>)
+
                 }
+
+                <div style={{ display: 'none' }}>
+                    <Spin></Spin>
+                </div>
 
             </div>
 
