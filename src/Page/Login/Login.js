@@ -50,6 +50,11 @@ const Login = () => {
         </div>
     }
 
+    if (user) {
+        console.log(user);
+        navigate('/')
+    }
+
 
     return (
         <div>
