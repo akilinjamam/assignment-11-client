@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import Spin from '../Spinner/Spinner';
 
 
 const Register = () => {
@@ -17,10 +18,15 @@ const Register = () => {
 
     const [
         createUserWithEmailAndPassword,
-        user,
-        loading,
-        error,
-    ] = useCreateUserWithEmailAndPassword(auth)
+        user
+
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true })
+
+
+    const [updateProfile, updating] = useUpdateProfile(auth);
+
+
+
 
 
     const [agree, setAgree] = useState(false);
@@ -34,10 +40,18 @@ const Register = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
 
-        console.log(name, email, password, 'working');
+        console.log(email, password, 'working');
 
         await createUserWithEmailAndPassword(email, password);
-        navigate('/home');
+        await updateProfile({ displayName: name })
+        navigate('/');
+
+
+    }
+
+
+    if (updating) {
+        return <Spin></Spin>
     }
 
     if (user) {
@@ -54,7 +68,7 @@ const Register = () => {
 
             <div className='border border-dark rounded p-4 w-75 mx-auto'>
                 <form onSubmit={handleSubmit}>
-                    {/* <input className='w-50' type="text" name="name" placeholder='type your name' id="" required /> <br /><br /> */}
+                    <input className='w-50' type="text" name="name" placeholder='type your name' id="" required /> <br /><br />
                     <input className='w-50' type="text" name="email" placeholder='type your email' id="" required /> <br /><br />
                     <input className='w-50' type="password" name="password" placeholder='type your password' id="" required /> <br /><br />
                     {/* navigate to login */}

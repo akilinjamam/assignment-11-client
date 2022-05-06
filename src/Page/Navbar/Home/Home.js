@@ -14,8 +14,8 @@ const Home = () => {
     const productsSliced = products.slice(0, 6)
     return (
         <div>
-            <h2>this is home</h2>
 
+            <br />
             <div>
                 <Carousel fade>
                     <Carousel.Item>
