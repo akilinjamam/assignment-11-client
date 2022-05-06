@@ -29,11 +29,14 @@ const Navbarr = () => {
                         </Nav>
                         <Nav>
                             {
-                                user && <Nav.Link as={Link} to="/additems" >Add New Item</Nav.Link>
+                                user && <Nav.Link as={Link} to="/manageInventory" >Manage Items</Nav.Link>
+                            }
+                            {
+                                user && <Nav.Link as={Link} to="/additems" >Add New Items</Nav.Link>
                             }
 
                             {
-                                user && <Nav.Link as={Link} to="/myitem" >My Item</Nav.Link>
+                                user && <Nav.Link as={Link} to="/myitem" >My Items</Nav.Link>
                             }
 
 
