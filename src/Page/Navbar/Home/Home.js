@@ -77,9 +77,11 @@ const Home = () => {
 
                 }
 
-                <div style={{ display: 'none' }}>
-                    <Spin></Spin>
-                </div>
+                {
+                    !productsSliced && <div >
+                        <Spin></Spin>
+                    </div>
+                }
 
             </div>
 

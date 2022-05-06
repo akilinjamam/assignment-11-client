@@ -4,9 +4,11 @@ import './App.css';
 import AddItems from './Page/AddItems/AddItems';
 import Login from './Page/Login/Login';
 import ManageInventory from './Page/ManageInventory/ManageInventory';
+import MyItem from './Page/MyItem/MyItem';
 import Footer from './Page/Navbar/Footer/Footer';
 import Home from './Page/Navbar/Home/Home';
 import Navbarr from './Page/Navbar/Navbar';
+import PageNotFound from './Page/PageNotFound/PageNotFound';
 import ProductDetail from './Page/ProductDetail/ProductDetail';
 import Products from './Page/Products/Products';
 import Register from './Page/Register/Register';
@@ -30,6 +32,8 @@ function App() {
         <Route path='/products/:productDetailId' element={<ProductDetail></ProductDetail>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/Myitem' element={<MyItem></MyItem>}></Route>
+        <Route path='*' element={<PageNotFound></PageNotFound>}></Route>
       </Routes>
       <br />
       <Footer></Footer>

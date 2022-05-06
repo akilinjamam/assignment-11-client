@@ -12,6 +12,7 @@ const ProductDetail = () => {
     console.log(typeof (quantity))
     console.log(product);
 
+
     useEffect(() => {
         const url = `https://peaceful-headland-64387.herokuapp.com/products/${productDetailId}`
         fetch(url)
@@ -102,6 +103,8 @@ const ProductDetail = () => {
 
 
 
+
+
     return (
         <div>
             <div style={{ border: '1px solid gray', width: '76%' }} className=' mx-auto mt-3 p-2 rounded' >
@@ -128,7 +131,7 @@ const ProductDetail = () => {
             <div>
 
                 <form onSubmit={handleAdd}>
-                    <input title='type number of quantity' type="number" name="quantity" id="" /> <br /> <br />
+                    <input title='type number of quantity' type="number" name="quantity" id="" required /> <br /> <br />
                     <input className='btn btn-primary' type="submit" value="Restock the Items " />
                 </form>
 

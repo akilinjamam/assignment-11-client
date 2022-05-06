@@ -28,11 +28,17 @@ const Navbarr = () => {
 
                         </Nav>
                         <Nav>
-                            <Nav.Link as={Link} to="/additems" >Add Items</Nav.Link>
+                            {
+                                user && <Nav.Link as={Link} to="/additems" >Add New Item</Nav.Link>
+                            }
+
+                            {
+                                user && <Nav.Link as={Link} to="/myitem" >My Item</Nav.Link>
+                            }
 
 
                             {
-                                user ? <button onClick={signOuting} style={{ backgroundColor: 'rgba(255, 255, 255, 0)', color: 'white' }}>Sign Out</button> : <Nav.Link as={Link} to="/login" eventKey={2} href="#memes">
+                                user ? <button onClick={signOuting} style={{ backgroundColor: 'rgba(255, 255, 255, 0)', color: 'white' }}>Logout</button> : <Nav.Link as={Link} to="/login" eventKey={2} href="#memes">
                                     Login
                                 </Nav.Link>
 
