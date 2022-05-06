@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+
 
 const Register = () => {
 
@@ -12,16 +15,48 @@ const Register = () => {
     }
 
 
-    const [agree, setAgree] = useState(false)
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth)
+
+
+    const [agree, setAgree] = useState(false);
+
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        console.log('clicked');
+
+        const name = event.target.name.value;
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+
+        console.log(name, email, password, 'working');
+
+        await createUserWithEmailAndPassword(email, password);
+        navigate('/home');
+    }
+
+    if (user) {
+        console.log('user', user)
+    }
+
+
+
+
+
     return (
         <div>
             <h2>this is Register</h2>
 
             <div className='border border-dark rounded p-4 w-75 mx-auto'>
-                <form action="">
-                    <input className='w-50' type="text" name="name" placeholder='type your name' id="" required /> <br /><br />
+                <form onSubmit={handleSubmit}>
+                    {/* <input className='w-50' type="text" name="name" placeholder='type your name' id="" required /> <br /><br /> */}
                     <input className='w-50' type="text" name="email" placeholder='type your email' id="" required /> <br /><br />
-                    <input className='w-50' type="text" name="password" placeholder='type your password' id="" required /> <br /><br />
+                    <input className='w-50' type="password" name="password" placeholder='type your password' id="" required /> <br /><br />
                     {/* navigate to login */}
                     <p className='text-dark'>Already Account in Exertion? <span style={{ cursor: 'pointer' }} className='text-danger' onClick={handleNavigate}  > Login </span> </p>
 
