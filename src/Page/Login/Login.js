@@ -1,8 +1,19 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
+import Spin from '../Spinner/Spinner';
 
 const Login = () => {
+
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
 
     const navigate = useNavigate()
 
@@ -16,10 +27,30 @@ const Login = () => {
 
         event.preventDefault();
 
-        console.log('clicked')
+        console.log('clicked');
 
+        const email = event.target.email.value;
+        const password = event.target.password.value;
 
+        console.log(email, password, 'working?');
+
+        signInWithEmailAndPassword(email, password)
     }
+
+
+    if (loading) {
+        return (<Spin></Spin>)
+    }
+
+
+    let elementError;
+    if (error) {
+        elementError = <div>
+            <p> Error: {error?.message}  </p>
+        </div>
+    }
+
+
     return (
         <div>
             <h2>Login Pages</h2>
@@ -32,6 +63,11 @@ const Login = () => {
                     {/* navigate to login */}
                     <p className='text-dark'>Are You new in Exertion? <span style={{ cursor: 'pointer' }} className='text-danger' onClick={handleNavigate}  > Register </span> </p>
 
+                    {/* showing error */}
+                    <div>
+                        <p style={{ fontSize: '12px', textAlign: 'center', color: 'red' }} > {elementError} </p>
+
+                    </div>
 
 
                     <Button className='d-block mx-auto mt-3' variant="primary" type="submit">
