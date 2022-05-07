@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Button } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import SocialSide from '../SocialSide/SocialSide';
 import Spin from '../Spinner/Spinner';
@@ -16,6 +17,9 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
     let elementError;
 
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
+        auth)
+
     const navigate = useNavigate()
 
 
@@ -23,7 +27,7 @@ const Login = () => {
         navigate('/register')
     }
 
-
+    const emailRef = useRef('')
     const handleSubmit = (event) => {
 
         event.preventDefault();
@@ -64,8 +68,20 @@ const Login = () => {
             <div className='border border-dark rounded p-4 w-75 mx-auto'>
                 <form onSubmit={handleSubmit}>
 
-                    <input className='w-50' type="text" name="email" placeholder='type your email' id="" required /> <br /><br />
+                    <input className='w-50' ref={emailRef} type="text" name="email" placeholder='type your email' id="" required /> <br /><br />
                     <input className='w-50' type="password" name="password" placeholder='type your password' id="" required /> <br /><br />
+
+                    {/* for forget password */}
+                    <p className='text-dark'> forget your password? <span style={{ cursor: 'pointer', fontSize: '13px' }} className='text-danger' onClick={async () => {
+
+                        const email = emailRef.current.value
+                        if (email) {
+                            await sendPasswordResetEmail(email);
+                            toast('Sent email to your Gmail Account. please check it');
+                        } else {
+                            toast('please enter your email address')
+                        }
+                    }}   > create new password </span> </p>
                     {/* navigate to login */}
                     <p className='text-dark'>Are You new in Exertion? <span style={{ cursor: 'pointer' }} className='text-danger' onClick={handleNavigate}  > Register </span> </p>
 

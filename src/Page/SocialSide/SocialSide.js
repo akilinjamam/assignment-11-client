@@ -1,11 +1,12 @@
 import React from 'react';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import logo from '../../icon/logo.png'
 
 const SocialSide = () => {
-    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth, { sendEmailVerification: true });
 
     let errorElement;
     let theLoading;
@@ -39,6 +40,7 @@ const SocialSide = () => {
 
     const handleGoogleSingIn = () => {
         signInWithGoogle(user)
+        toast('email varification has been sent')
     }
 
 

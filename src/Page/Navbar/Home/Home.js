@@ -9,6 +9,7 @@ import useProducts from '../../../useProducts';
 import { Link } from 'react-router-dom';
 import Spin from '../../Spinner/Spinner';
 
+
 const Home = () => {
 
     const [products] = useProducts()
@@ -17,6 +18,9 @@ const Home = () => {
     // if (!products) {
     //     return <Spin></Spin>
     // }
+
+
+
     return (
         <div>
 

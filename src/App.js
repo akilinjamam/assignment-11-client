@@ -1,6 +1,8 @@
 
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+
 import AddItems from './Page/AddItems/AddItems';
 import Blogs from './Page/Blogs/Blogs';
 import Login from './Page/Login/Login';
@@ -14,6 +16,8 @@ import ProductDetail from './Page/ProductDetail/ProductDetail';
 import Products from './Page/Products/Products';
 import Register from './Page/Register/Register';
 import RequireAuths from './Page/RequireAuths/RequireAuths';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -39,7 +43,7 @@ function App() {
       </Routes>
       <br />
       <Footer></Footer>
-
+      <ToastContainer></ToastContainer>
     </div>
   );
 }

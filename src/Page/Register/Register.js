@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Spin from '../Spinner/Spinner';
+import { toast } from 'react-toastify';
 
 
 const Register = () => {
@@ -43,11 +44,16 @@ const Register = () => {
         console.log(email, password, 'working');
 
         await createUserWithEmailAndPassword(email, password);
-        await updateProfile({ displayName: name })
+        await updateProfile({ displayName: name });
+        toast("email varification has been sent");
+
+
         navigate('/');
 
 
     }
+
+
 
 
     if (updating) {
@@ -81,7 +87,6 @@ const Register = () => {
                     <Button disabled={!agree} className='d-block mx-auto mt-3' variant="primary" type="submit">
                         Register
                     </Button>
-
                 </form>
             </div>
 
