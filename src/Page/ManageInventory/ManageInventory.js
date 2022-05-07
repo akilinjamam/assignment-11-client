@@ -1,18 +1,25 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import useProducts from '../../useProducts';
 import Products from '../Products/Products';
 import './ManageInventory.css'
 import deleteIcon from '../../icon/delete.png'
 
 const ManageInventory = () => {
+
     const [inventories, setInventories] = useProducts()
+
+
 
 
     const navigate = useNavigate()
 
     const handleButton = (id) => {
         navigate(`/products/${id}`)
+    }
+
+    const handleItem = (id) => {
+        navigate(`/addYourItem/${id}`)
     }
 
     const deleteButton = (id) => {
@@ -58,6 +65,7 @@ const ManageInventory = () => {
                                         <p title={inventory.description}>Description: {inventory.description.length > 20 ? inventory.description.slice(0, 20) + '...' : inventory.description}  </p>
                                         <p>Quantity: {inventory.quantity} </p>
                                         <button onClick={() => handleButton(inventory._id)} className='btn btn-primary'> Stock Update </button>
+                                        <button onClick={() => handleItem(inventory._id)} className='btn btn-primary ms-2'>Add to Your Item</button>
 
                                         <div style={{ position: 'absolute', right: '0', display: 'inline', paddingBottom: '10px', paddingRight: '10px' }}>
                                             <span style={{ position: 'relative' }}>

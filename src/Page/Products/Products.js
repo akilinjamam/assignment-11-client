@@ -2,9 +2,14 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Products.css'
 import deleteIcon from '../../icon/delete.png'
+import Spin from '../Spinner/Spinner';
 
 const Products = ({ product }) => {
     const { quantity, img, description, name, _id } = product
+
+    if (!product) {
+        <div> <Spin></Spin> </div>
+    }
 
     const navigate = useNavigate()
 
@@ -13,6 +18,7 @@ const Products = ({ product }) => {
     }
     return (
         <div>
+
             <div className='photo-album'>
 
                 <div className='photo-frame'>

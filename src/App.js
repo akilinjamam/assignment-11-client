@@ -1,5 +1,4 @@
 
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 
@@ -18,6 +17,7 @@ import Register from './Page/Register/Register';
 import RequireAuths from './Page/RequireAuths/RequireAuths';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AddYourItem from './Page/AddYourItem/AddYourItem';
 
 
 function App() {
@@ -34,7 +34,15 @@ function App() {
             <AddItems></AddItems>
           </RequireAuths>}>
         </Route>
-        <Route path='/products/:productDetailId' element={<ProductDetail></ProductDetail>}></Route>
+        <Route path='/products/:productDetailId' element={<RequireAuths>
+          <ProductDetail></ProductDetail>
+        </RequireAuths>}>
+        </Route>
+        <Route path='/addYourItem/:addItemId' element={
+          <RequireAuths>
+            <AddYourItem></AddYourItem>
+          </RequireAuths>}>
+        </Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
