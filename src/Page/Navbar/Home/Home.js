@@ -8,6 +8,12 @@ import Products from '../../Products/Products';
 import useProducts from '../../../useProducts';
 import { Link } from 'react-router-dom';
 import Spin from '../../Spinner/Spinner';
+import top1 from '../../../cars/honda.jpg';
+import top2 from '../../../cars/land-rover.jpg';
+import top3 from '../../../cars/nissan.jpg';
+import importer1 from '../../../importer/player-1.png';
+import importer2 from '../../../importer/player-3.png'
+import importer3 from '../../../importer/player-5.png'
 
 
 const Home = () => {
@@ -91,6 +97,60 @@ const Home = () => {
 
             <div>
                 <Link to='/manageInventory'> <button className='btn btn-primary'> Manage Inventory </button> </Link>
+            </div>
+            <br /><br />
+            <div>
+                <h2 className='text-success'>TOP SELLING CARS</h2><br />
+                <div style={{ display: 'flex', flexWrap: 'wrap', width: '75%', justifyContent: 'space-between', margin: 'auto' }}>
+                    <div className="card  mb-5" style={{ width: '18rem', boxShadow: '0 0 30px 2px lightGray ' }}>
+                        <img src={top1} className="card-img-top" alt="..." />
+                        <div className="card-body">
+                            <h5 className="card-title text-start">Honda Accords</h5>
+                            <p className="card-text  text-start text-dark">Price : 6700000</p>
+
+                        </div>
+                    </div>
+                    <div className="card  mb-5" style={{ width: '18rem', boxShadow: '0 0 30px 2px lightGray ' }}>
+                        <img src={top2} className="card-img-top" alt="..." />
+                        <div className="card-body">
+                            <h5 className="card-title text-start">Land Rover Discovery</h5>
+                            <p className="card-text  text-start  text-dark">Price : 7500000</p>
+
+                        </div>
+                    </div>
+                    <div className="card  mb-5" style={{ width: '18rem', boxShadow: '0 0 30px 2px lightGray ' }}>
+                        <img src={top3} className="card-img-top" alt="..." />
+                        <div className="card-body">
+                            <h5 className="card-title text-start text-start">Nissan Kicks</h5>
+                            <p className="card-text text-start  text-dark">Price : 7100000</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br /><br />
+            <div>
+                <h2 className='text-success'>TOP SELLING CARS</h2><br />
+                <div style={{ display: 'flex', flexWrap: 'wrap', width: '75%', justifyContent: 'space-between', margin: 'auto' }}>
+                    <div className="card  mb-5" style={{ width: '18rem', boxShadow: '0 0 30px 2px lightGray ' }}>
+                        <div style={{ height: '250px', paddingTop: '20px', backgroundColor: 'lightgray' }}> <img src={importer1} className="card-img-top w-75 mx-auto" alt="..." /></div>
+                        <div className="card-body">
+                            <h5 className="card-title pt-4">shakil Ahmed</h5>
+                        </div>
+                    </div>
+                    <div className="card  mb-5" style={{ width: '18rem', boxShadow: '0 0 30px 2px lightGray ' }}>
+                        <div style={{ height: '250px', paddingTop: '20px', backgroundColor: 'lightgray' }}> <img src={importer2} className="card-img-top w-75 mx-auto" alt="..." /></div>
+                        <div className="card-body">
+                            <h5 className="card-title pt-4">Soleman Shah</h5>
+                        </div>
+                    </div>
+                    <div className="card  mb-5" style={{ width: '18rem', boxShadow: '0 0 30px 2px lightGray ' }}>
+                        <div style={{ height: '250px', paddingTop: '20px', backgroundColor: 'lightgray' }}> <img src={importer3} className="card-img-top w-75 mx-auto" alt="..." /></div>
+                        <div className="card-body">
+                            <h5 className="card-title pt-4">Mohammad Ali</h5>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>

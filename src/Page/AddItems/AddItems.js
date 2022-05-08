@@ -37,6 +37,7 @@ const AddItems = () => {
                 <textarea className='mb-2' placeholder='type description' {...register("description")} />
                 <input className='mb-2' placeholder='type quantity' {...register("quantity")} />
                 <input className='mb-2' placeholder='type price' {...register("price")} />
+                <input className='mb-2' placeholder='type sold item' {...register("sold")} />
 
 
                 <input className='mb-2' placeholder='put photo url' type="text" {...register("img")} />

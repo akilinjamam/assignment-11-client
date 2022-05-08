@@ -8,7 +8,7 @@ const ProductDetail = () => {
 
     const { productDetailId } = useParams()
     const [product, setProduct] = useState({})
-    const { img, name, description, price, quantity, supplier } = product
+    const { img, name, description, price, quantity, supplier, sold, _id } = product
     console.log(typeof (quantity))
     console.log(product);
 
@@ -113,8 +113,9 @@ const ProductDetail = () => {
                 </div>
                 <div className='text-start p-2'>
                     <h2 className='text-bold'> Brand : <span style={{ color: 'green' }}>{product.name}  </span>  </h2>
-
+                    <p className='text-dark'>ID No : {_id} </p>
                     <p className='text-dark'>Description : {description} </p>
+
                     <div style={{ backgroundColor: 'lightgray', borderRadius: '10px', padding: '5px', display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
                         <p className='text-dark mt-2 ms-2'>Quantity : {newQuantity ? newQuantity : quantity} </p>
 
@@ -122,7 +123,8 @@ const ProductDetail = () => {
 
                     </div>
                     <p className='text-dark'>Price : {price} </p>
-                    <p className='text-dark'>Suppliyer Name : {supplier} </p>
+                    <p className='text-dark'>Sold : {sold} </p>
+                    <p className='text-dark'>Importer Name : {supplier} </p>
                 </div>
 
 

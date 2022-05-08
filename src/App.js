@@ -46,7 +46,7 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
-        <Route path='/Myitem' element={<MyItem></MyItem>}></Route>
+        <Route path='/Myitem' element={<RequireAuths><MyItem></MyItem></RequireAuths>}></Route>
         <Route path='*' element={<PageNotFound></PageNotFound>}></Route>
       </Routes>
       <br />

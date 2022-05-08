@@ -74,30 +74,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-
-
-
-/* 
-
-https://i.ibb.co/Gpm9ptJ/audi.jpg
-https://i.ibb.co/D1f9Q6W/bentley.jpg
-https://i.ibb.co/mS6n60X/bmw.jpg
-https://i.ibb.co/mqyDtGV/buggatti.jpg
-https://i.ibb.co/pjDYjNz/chevrolet.jpg
-https://i.ibb.co/x3mfLkV/fiat.jpg
-https://i.ibb.co/dmWpvqk/ford.jpg
-https://i.ibb.co/HHH0S1D/honda.jpg
-https://i.ibb.co/m0H8Lxy/jaguar.jpg
-https://i.ibb.co/wpJQpxt/jeep.jpg
-https://i.ibb.co/wS1Sttq/land-rover.jpg
-https://i.ibb.co/7JKLNg9/lexus.jpg
-https://i.ibb.co/nL4mfSg/marsadiz-benz.jpg
-https://i.ibb.co/0CffqCd/mazda.jpg
-https://i.ibb.co/jf7DtmB/nissan.jpg
-https://i.ibb.co/qJL3NkR/porsche.jpg
-https://i.ibb.co/3CXwJkX/roles-royes.jpg
-https://i.ibb.co/k8xPqf3/tesla.jpg
-https://i.ibb.co/dP8XGVm/volvo.jpg
-
-*/
