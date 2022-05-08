@@ -1,3 +1,25 @@
+# Project Name: Exertion
+
+
+## Live site Link: https://exertion-7d317.firebaseapp.com/
+
+# Description:
+# This is a website of Car wearhouse. where cars are imported from defferent countries then stock the cars  and sold it to the local supplier.
+
+
+## Five Bulletings:
+
+* This website is made with react javascript and nodejs for backend and database
+* firbase, react-router, react-bootstrap are installed. for backend and database mongodb, express, cors, dotenv are also installed to get better performence in the case of getting data in UI.
+* Full responsive in  mobile and tablet with better user experiance
+* All function is workable without any disturbance
+* Fully secured in privacy with maintaining strong security system with google firebase authentication.  
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
