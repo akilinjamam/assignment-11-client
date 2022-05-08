@@ -31,7 +31,7 @@ const AddItems = () => {
 
     return (
         <div>
-            <h2>Add New Item</h2>
+            <h2 className='text-success'>Add New Item</h2>
             <form className='d-flex flex-column w-50 mx-auto' onSubmit={handleSubmit(onSubmit)}>
                 <input className='mb-2' placeholder='type name' {...register("name")} />
                 <textarea className='mb-2' placeholder='type description' {...register("description")} />

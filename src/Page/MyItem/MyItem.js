@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import './MyItem.css'
 
 const MyItem = () => {
 
@@ -40,18 +41,19 @@ const MyItem = () => {
     }
     return (
         <div>
-            <h2>this is my item: {items.length} </h2>
+            <br />
+            <h2 className='text-success'>YOUR TOTAL ITEMS: {items.length} </h2>
 
-            <div>
+            <div className='main'>
 
 
                 {
-                    items.map(item => <div style={{ backgroundColor: 'maroon', color: 'white', display: 'flex', justifyContent: 'space-between' }} className='text-start  border border-dark mt-4 rounded' key={item._id}>
-                        <div style={{ width: '190px', fontSize: '11px', marginTop: '10px', marginBottom: '10px', padding: '5px', textAlign: 'center', paddingTop: '5px' }}>   <span style={{ display: 'inline-block' }}>Email: {item.email}</span></div>
-                        <div style={{ width: '130px', fontSize: '11px', marginTop: '10px', marginBottom: '10px', padding: '5px', textAlign: 'center', paddingTop: '5px' }}>   <span style={{ display: 'inline-block' }}     >Product: {item.item}</span></div>
-                        <div style={{ width: '100px', fontSize: '11px', marginTop: '10px', marginBottom: '10px', padding: '5px', textAlign: 'center', paddingTop: '5px' }}>   <span style={{ display: 'inline-block' }}>Quantity: {item.quantity}</span></div>
-                        <div style={{ width: '190px', fontSize: '11px', marginTop: '10px', marginBottom: '10px', padding: '5px', textAlign: 'center', paddingTop: '5px' }}>   <span style={{ display: 'inline-block' }}>price: {item.price}</span></div>
-                        <div className='d-flex'>
+                    items.map(item => <div style={{ backgroundColor: 'maroon', color: 'white', display: 'flex', justifyContent: 'space-between', width: '100%' }} className='text-start  border border-dark mt-4 rounded the-main' key={item._id}>
+                        <div className='res1' style={{ width: '190px', fontSize: '11px', marginTop: '10px', marginBottom: '10px', padding: '5px', textAlign: 'center', paddingTop: '5px' }}>   <span style={{ display: 'inline-block' }}>Email: {item.email}</span></div>
+                        <div className='res2' style={{ width: '130px', fontSize: '11px', marginTop: '10px', marginBottom: '10px', padding: '5px', textAlign: 'center', paddingTop: '5px' }}>   <span style={{ display: 'inline-block' }}     >Product: {item.item}</span></div>
+                        <div className='res3' style={{ width: '100px', fontSize: '11px', marginTop: '10px', marginBottom: '10px', padding: '5px', textAlign: 'center', paddingTop: '5px' }}>   <span style={{ display: 'inline-block' }}>Quantity: {item.quantity}</span></div>
+                        <div className='res4' style={{ width: '190px', fontSize: '11px', marginTop: '10px', marginBottom: '10px', padding: '5px', textAlign: 'center', paddingTop: '5px' }}>   <span style={{ display: 'inline-block' }}>price: {item.price}</span></div>
+                        <div className='d-flex res5'>
                             <div style={{ width: '190px', fontSize: '11px', marginTop: '10px', marginBottom: '10px', padding: '5px', textAlign: 'center', paddingTop: '5px' }}>   <span style={{ display: 'inline-block' }}>Importer: {item.importer}  </span> </div>
                             <div>
                                 <FontAwesomeIcon onClick={() => deleteButton(item._id)} style={{ fontSize: '20px', marginTop: '10px', marginRight: '10px', cursor: 'pointer' }} icon={faTrash} />

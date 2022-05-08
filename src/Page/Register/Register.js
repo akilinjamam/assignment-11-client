@@ -70,7 +70,7 @@ const Register = () => {
 
     return (
         <div>
-            <h2>this is Register</h2>
+            <h2 className='text-success'>Register</h2>
 
             <div className='border border-dark rounded p-4 w-75 mx-auto'>
                 <form onSubmit={handleSubmit}>

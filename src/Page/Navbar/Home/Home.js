@@ -37,10 +37,7 @@ const Home = () => {
                             src={v1}
                             alt="First slide"
                         />
-                        <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                        </Carousel.Caption>
+
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
@@ -49,10 +46,7 @@ const Home = () => {
                             alt="Second slide"
                         />
 
-                        <Carousel.Caption>
-                            <h3>Second slide label</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </Carousel.Caption>
+
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
@@ -61,10 +55,7 @@ const Home = () => {
                             alt="Third slide"
                         />
 
-                        <Carousel.Caption>
-                            <h3>Third slide label</h3>
-                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                        </Carousel.Caption>
+
                     </Carousel.Item>
 
                     <Carousel.Item>
@@ -74,10 +65,7 @@ const Home = () => {
                             alt="Third slide"
                         />
 
-                        <Carousel.Caption>
-                            <h3>Third slide label</h3>
-                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                        </Carousel.Caption>
+
                     </Carousel.Item>
                 </Carousel>
             </div>
@@ -130,7 +118,7 @@ const Home = () => {
             </div>
             <br /><br />
             <div>
-                <h2 className='text-success'>TOP SELLING CARS</h2><br />
+                <h2 className='text-success'>TOP IMPORTERS</h2><br />
                 <div style={{ display: 'flex', flexWrap: 'wrap', width: '75%', justifyContent: 'space-between', margin: 'auto' }}>
                     <div className="card  mb-5" style={{ width: '18rem', boxShadow: '0 0 30px 2px lightGray ' }}>
                         <div style={{ height: '250px', paddingTop: '20px', backgroundColor: 'lightgray' }}> <img src={importer1} className="card-img-top w-75 mx-auto" alt="..." /></div>

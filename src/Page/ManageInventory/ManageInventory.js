@@ -44,7 +44,7 @@ const ManageInventory = () => {
 
     return (
         <div>
-            <h2>Manage Inventory</h2>
+            <h2 className='text-success'>Manage Inventory</h2>
 
             <div className='the-grid'>
 
@@ -69,7 +69,7 @@ const ManageInventory = () => {
 
                                         <div style={{ position: 'absolute', right: '0', display: 'inline', paddingBottom: '10px', paddingRight: '10px' }}>
                                             <span style={{ position: 'relative' }}>
-                                                <button onClick={() => deleteButton(inventory._id)} style={{ border: 'none', backgroundColor: 'rgba(252, 201, 71, 0)' }}> <img style={{ width: '40px', }} className='dlt the-dlt ' src={deleteIcon} alt="" /></button>
+                                                <button className='trash' onClick={() => deleteButton(inventory._id)} style={{ border: 'none', backgroundColor: 'rgba(252, 201, 71, 0)' }}> <img style={{ width: '40px', }} className=' dlt the-dlt ' src={deleteIcon} alt="" /></button>
                                             </span>
                                         </div>
                                     </div>

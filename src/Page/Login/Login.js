@@ -63,7 +63,7 @@ const Login = () => {
 
     return (
         <div>
-            <h2>Login Pages</h2>
+            <h2 className='text-success'>Login</h2>
 
             <div className='border border-dark rounded p-4 w-75 mx-auto'>
                 <form onSubmit={handleSubmit}>
@@ -103,9 +103,7 @@ const Login = () => {
                 </form>
             </div>
 
-            <div style={{ height: '300px' }}>
 
-            </div>
         </div>
     );
 };
