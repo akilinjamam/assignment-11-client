@@ -6,7 +6,7 @@ const useProducts = () => {
 
     useEffect(() => {
 
-        fetch('https://peaceful-headland-64387.herokuapp.com/products')
+        fetch('https://assignment-11-server-production-4636.up.railway.app/products')
             .then(res => res.json())
             .then(data => setProducts(data))
 

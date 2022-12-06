@@ -15,7 +15,7 @@ const AddYourItem = () => {
     useEffect(() => {
 
 
-        fetch(`https://peaceful-headland-64387.herokuapp.com/addYourItem/${addItemId}`)
+        fetch(`https://assignment-11-server-production-4636.up.railway.app/addYourItem/${addItemId}`)
             .then(res => res.json())
             .then(data => setItems(data))
     }, [])
@@ -33,7 +33,7 @@ const AddYourItem = () => {
             img: event.target.img.value,
         }
 
-        axios.post('https://peaceful-headland-64387.herokuapp.com/myItem', myItem)
+        axios.post('https://assignment-11-server-production-4636.up.railway.app/myItem', myItem)
             .then(response => {
 
 

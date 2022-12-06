@@ -14,7 +14,7 @@ const MyItem = () => {
 
     useEffect(() => {
         const email = user?.email
-        fetch(`https://peaceful-headland-64387.herokuapp.com/myItem?email=${email}`)
+        fetch(`https://assignment-11-server-production-4636.up.railway.app/myItem?email=${email}`)
             .then(res => res.json())
             .then(data => setItems(data))
 
@@ -25,7 +25,7 @@ const MyItem = () => {
         const confirmDelete = window.confirm('Are you sure you want to delete Item')
 
         if (confirmDelete) {
-            const url = `https://peaceful-headland-64387.herokuapp.com/myItem/${id}`
+            const url = `https://assignment-11-server-production-4636.up.railway.app/myItem/${id}`
 
             fetch(url, {
                 method: 'DELETE'

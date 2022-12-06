@@ -14,7 +14,7 @@ const ProductDetail = () => {
 
 
     useEffect(() => {
-        const url = `https://peaceful-headland-64387.herokuapp.com/products/${productDetailId}`
+        const url = `https://assignment-11-server-production-4636.up.railway.app/products/${productDetailId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
@@ -40,7 +40,7 @@ const ProductDetail = () => {
 
             // update server
 
-            const url = `https://peaceful-headland-64387.herokuapp.com/products/${productDetailId}`
+            const url = `https://assignment-11-server-production-4636.up.railway.app/products/${productDetailId}`
             // const stringifiedQuantity = newQuantity.toString()
             fetch(url, {
                 method: 'PUT',
@@ -82,7 +82,7 @@ const ProductDetail = () => {
 
         // update server
 
-        const url = `https://peaceful-headland-64387.herokuapp.com/products/${productDetailId}`
+        const url = `https://assignment-11-server-production-4636.up.railway.app/products/${productDetailId}`
         // const stringifiedQuantity = newQuantity.toString()
         fetch(url, {
             method: 'PUT',

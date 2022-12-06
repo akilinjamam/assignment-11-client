@@ -26,7 +26,7 @@ const ManageInventory = () => {
         const confirmDelete = window.confirm('Are you sure you want to delete Item')
 
         if (confirmDelete) {
-            const url = `https://peaceful-headland-64387.herokuapp.com/products/${id}`
+            const url = `https://assignment-11-server-production-4636.up.railway.app/products/${id}`
 
             fetch(url, {
                 method: 'DELETE'

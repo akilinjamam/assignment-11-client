@@ -9,7 +9,7 @@ const AddItems = () => {
 
     const onSubmit = (data) => {
 
-        const url = 'https://peaceful-headland-64387.herokuapp.com/products'
+        const url = 'https://assignment-11-server-production-4636.up.railway.app/products'
 
         fetch(url, {
             method: 'POST',
