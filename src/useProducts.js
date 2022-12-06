@@ -12,6 +12,7 @@ const useProducts = () => {
 
 
 
+
     }, [])
 
     return [products, setProducts]
